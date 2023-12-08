@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect,useState} from "react";
+import "./Card.css"
 
-function App() {
+function App(){
+
+  const [count1,setcount1]=useState(0)
+  const [count2,setcount2]=useState(0)
+
+  useEffect(()=>{
+    console.log('hi iam loaded')
+
+  },[count1])
+  const Add1=()=>{setcount1(count1+1)}
+  const Add2=()=>{setcount2(count2+1)}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>{count1}</h1>
+      <h1>{count2}</h1>
+      <button onClick={Add1}>Add1</button>
+      <button onClick={Add2}>Add2</button>
     </div>
-  );
+  )
+
 }
 
-export default App;
+
+
+
+
+
+export default App
